@@ -55,7 +55,7 @@ export default function BackgroundAgentsSection() {
             <div className="w-full lg:flex-[0.5] flex items-center justify-center p-8 gap-4 flex-col">
               <p className="text-xl font-medium">The difference between automation and anticipation</p>
               <p className="text-sm text-muted-foreground">
-                These agents don't just follow scripts - they adapt, learn patterns, and evolve your workflows over time.
+                These agents don&apos;t just follow scripts - they adapt, learn patterns, and evolve your workflows over time.
               </p>
             </div>
             <div className="w-full lg:flex-[0.5]">
@@ -161,7 +161,7 @@ export default function BackgroundAgentsSection() {
             <div className="w-full lg:flex-[0.5] flex items-center justify-center p-8 gap-4 flex-col">
               <p className="text-xl font-medium">The invisible layer where chaos becomes clarity</p>
               <p className="text-sm text-muted-foreground">
-                These agents don't just follow scripts - they adapt, learn patterns, and evolve your workflows over time.
+                These agents don&apos;t just follow scripts - they adapt, learn patterns, and evolve your workflows over time.
               </p>
             </div>
           </div>

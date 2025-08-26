@@ -11,7 +11,7 @@ export default function Hero() {
             </div>
             <div style={{ willChange: 'transform, filter, opacity', opacity: 1, filter: 'blur(0px)', transform: 'none' }}>
               <h1 className="font-heading font-medium leading-tight text-4xl md:text-5xl lg:text-7xl text-foreground">
-                AI Agent that works,<br />even when you're away
+                AI Agent that works,<br />even when you&apos;re away
               </h1>
             </div>
             <div style={{ willChange: 'transform, filter, opacity', opacity: 1, filter: 'blur(0px)', transform: 'none' }}>

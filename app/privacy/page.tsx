@@ -75,7 +75,7 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground leading-relaxed">
               We do not disclose personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, 
               or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a 
-              natural person, data concerning health or data concerning a natural person's sex life or sexual orientation or any other 
+              natural person, data concerning health or data concerning a natural person&apos;s sex life or sexual orientation or any other 
               sensitive personal information.
             </p>
           </section>

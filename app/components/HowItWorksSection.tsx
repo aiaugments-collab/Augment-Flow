@@ -158,7 +158,7 @@ export default function HowItWorksSection() {
                 {/* System Messages */}
                 <div className="max-w-[85%] self-start" style={{ opacity: 1, transform: 'none' }}>
                   <div className="text-foreground text-xs whitespace-pre-line">
-                    I'll help you post this thread on Twitter. Let me break it down into individual tweets for the thread.
+                    I&apos;ll help you post this thread on Twitter. Let me break it down into individual tweets for the thread.
                   </div>
                 </div>
 
