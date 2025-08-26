@@ -1,0 +1,248 @@
+element.style {
+}
+.__variable_6bee3b {
+    --font-poppins: "Poppins", "Poppins Fallback";
+}
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-poppins);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+* {
+    border-color: var(--border);
+}
+.font-poppins {
+    font-family: var(--font-poppins);
+}
+.\!p-0 {
+    padding: var(--spacing-0) !important;
+}
+.w-full {
+    width: 100%;
+}
+.\!m-0 {
+    margin: var(--spacing-0) !important;
+}
+.relative {
+    position: relative;
+}
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+@supports (color:color-mix(in lab,red,red)) {
+    * {
+        outline-color: 
+ color-mix(in oklab, var(--color-ring) 50%, transparent);
+    }
+}
+* {
+    border-color: var(--color-border);
+    outline-color: 
+ color-mix(in srgb, var(--ring) 50%, transparent);
+}
+*, ::backdrop, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+style attribute {
+    color-scheme: dark;
+}
+.dark {
+    --background: var(--bhindi-zinc-800);
+    --foreground: var(--bhindi-zinc-50);
+    --card: var(--bhindi-zinc-900);
+    --card-foreground: var(--bhindi-zinc-50);
+    --popover: var(--bhindi-zinc-700);
+    --popover-foreground: var(--bhindi-zinc-50);
+    --primary: var(--bhindi-green-500);
+    --primary-foreground: var(--bhindi-zinc-900);
+    --secondary: var(--bhindi-zinc-700);
+    --secondary-foreground: var(--bhindi-zinc-50);
+    --muted: var(--bhindi-zinc-600);
+    --muted-foreground: var(--bhindi-zinc-300);
+    --accent: var(--bhindi-zinc-500);
+    --accent-foreground: var(--bhindi-zinc-50);
+    --destructive: var(--bhindi-red-500);
+    --destructive-foreground: var(--bhindi-destructive-foreground-rgba);
+    --border: var(--bhindi-zinc-600);
+    --input: var(--bhindi-input-dark-rgba);
+    --ring: var(--bhindi-zinc-300);
+    --chart-1: var(--bhindi-blue-700);
+    --chart-2: var(--bhindi-emerald-500);
+    --chart-3: var(--bhindi-amber-500);
+    --chart-4: var(--bhindi-purple-500);
+    --chart-5: var(--bhindi-rose-500);
+    --sidebar-background: var(--bhindi-zinc-900);
+    --sidebar-foreground: var(--bhindi-zinc-50);
+    --sidebar-primary: var(--bhindi-blue-700);
+    --sidebar-primary-foreground: var(--bhindi-zinc-50);
+    --sidebar-accent: var(--bhindi-zinc-800);
+    --sidebar-accent-foreground: var(--bhindi-zinc-50);
+    --sidebar-border: var(--bhindi-zinc-600);
+    --sidebar-ring: var(--bhindi-zinc-800);
+}
+:root {
+    --bhindi-green-50: #f2fffa;
+    --bhindi-green-100: #e2fff5;
+    --bhindi-green-200: #beffe9;
+    --bhindi-green-300: #79ffd2;
+    --bhindi-green-400: #0fdd98;
+    --bhindi-green-500: #00c584;
+    --bhindi-green-600: #008b5c;
+    --bhindi-green-700: #006141;
+    --bhindi-green-800: #003b27;
+    --bhindi-green-900: #002f1f;
+    --bhindi-green-950: #001d14;
+    --bhindi-zinc-50: #f1f2f5;
+    --bhindi-zinc-100: #dcdee2;
+    --bhindi-zinc-200: #bfc4cc;
+    --bhindi-zinc-300: #737983;
+    --bhindi-zinc-400: #424750;
+    --bhindi-zinc-500: #2d3037;
+    --bhindi-zinc-600: #24272c;
+    --bhindi-zinc-700: #1c1e22;
+    --bhindi-zinc-800: #17191c;
+    --bhindi-zinc-900: #121417;
+    --bhindi-zinc-950: #0d0f11;
+    --bhindi-red-50: #fff5f7;
+    --bhindi-red-100: #ffdde2;
+    --bhindi-red-200: #ffaebb;
+    --bhindi-red-300: #ff879b;
+    --bhindi-red-400: #ff6982;
+    --bhindi-red-500: #fb4462;
+    --bhindi-red-600: #d7324d;
+    --bhindi-red-700: #ae283e;
+    --bhindi-red-800: #661825;
+    --bhindi-red-900: #380e14;
+    --bhindi-red-950: #300a10;
+    --bhindi-base-white: #fff;
+    --bhindi-input-dark-rgba: #ffffff1a;
+    --bhindi-destructive-foreground-rgba: #fb446233;
+    --bhindi-orange-600: #ea580c;
+    --bhindi-teal-600: #0d9488;
+    --bhindi-cyan-900: #164e63;
+    --bhindi-amber-400: #fbbf24;
+    --bhindi-amber-500: #f59e0b;
+    --bhindi-blue-700: #1d4ed8;
+    --bhindi-emerald-500: #10b981;
+    --bhindi-purple-500: #a855f7;
+    --bhindi-rose-500: #f43f5e;
+    --background: var(--bhindi-base-white);
+    --foreground: var(--bhindi-zinc-950);
+    --card: var(--bhindi-base-white);
+    --card-foreground: var(--bhindi-zinc-950);
+    --popover: var(--bhindi-zinc-50);
+Show all properties (27 more)
+}
+:host, html {
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    line-height: 1.5;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+}
+:host, :root {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-50: var(--bhindi-red-50);
+    --color-red-100: var(--bhindi-red-100);
+    --color-red-200: var(--bhindi-red-200);
+    --color-red-300: var(--bhindi-red-300);
+    --color-red-400: var(--bhindi-red-400);
+    --color-red-500: var(--bhindi-red-500);
+    --color-red-600: var(--bhindi-red-600);
+    --color-red-700: var(--bhindi-red-700);
+    --color-red-800: var(--bhindi-red-800);
+    --color-red-900: var(--bhindi-red-900);
+    --color-red-950: var(--bhindi-red-950);
+    --color-orange-50: oklch(98% .016 73.684);
+    --color-orange-100: oklch(95.4% .038 75.164);
+    --color-orange-200: oklch(90.1% .076 70.697);
+    --color-orange-300: oklch(83.7% .128 66.29);
+    --color-orange-500: oklch(70.5% .213 47.604);
+    --color-orange-600: var(--bhindi-orange-600);
+    --color-orange-700: oklch(55.3% .195 38.402);
+    --color-orange-800: oklch(47% .157 37.304);
+    --color-orange-950: oklch(26.6% .079 36.259);
+    --color-amber-50: oklch(98.7% .022 95.277);
+    --color-amber-200: oklch(92.4% .12 95.746);
+    --color-amber-300: oklch(87.9% .169 91.605);
+    --color-amber-400: var(--bhindi-amber-400);
+    --color-amber-500: var(--bhindi-amber-500);
+    --color-amber-600: oklch(66.6% .179 58.318);
+    --color-amber-700: oklch(55.5% .163 48.998);
+    --color-amber-800: oklch(47.3% .137 46.201);
+    --color-amber-900: oklch(41.4% .112 45.904);
+    --color-amber-950: oklch(27.9% .077 45.635);
+    --color-yellow-50: oklch(98.7% .026 102.212);
+    --color-yellow-100: oklch(97.3% .071 103.193);
+    --color-yellow-200: oklch(94.5% .129 101.54);
+    --color-yellow-300: oklch(90.5% .182 98.111);
+    --color-yellow-400: oklch(85.2% .199 91.936);
+    --color-yellow-500: oklch(79.5% .184 86.047);
+    --color-yellow-600: oklch(68.1% .162 75.834);
+    --color-yellow-700: oklch(55.4% .135 66.442);
+    --color-yellow-800: oklch(47.6% .114 61.907);
+    --color-yellow-900: oklch(42.1% .095 57.708);
+    --color-yellow-950: oklch(28.6% .066 53.813);
+    --color-lime-500: oklch(76.8% .233 130.85);
+    --color-green-50: var(--bhindi-green-50);
+    --color-green-100: var(--bhindi-green-100);
+    --color-green-200: var(--bhindi-green-200);
+    --color-green-300: var(--bhindi-green-300);
+    --color-green-400: var(--bhindi-green-400);
+    --color-green-500: var(--bhindi-green-500);
+Show all properties (194 more)
+}
+*, ::backdrop, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+}
+*, ::backdrop, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+}
+*, ::backdrop, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-corner {
+    background: 0 0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: 0 0;
+}

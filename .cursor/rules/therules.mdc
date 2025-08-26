@@ -1,0 +1,112 @@
+---
+alwaysApply: true
+---
+
+### Cursor Rules for Augment Flow (Bhindi.io Clone)
+
+1. **Project Goal**
+
+   * We are cloning **Bhindi.io** as part of the Augment Suite.
+   * The clone must look and feel **exactly like Bhindi.io** in design, layout, and interactions.
+
+2. **Source Material**
+
+   * I will provide **HTML and CSS classes** copied directly from the Inspect Tool.
+   * I will also provide **screenshots** of the UI for reference.
+   * These assets will be stored inside the **`html/` folder** in the root directory.
+   * You must refer to this folder whenever implementing designs to ensure pixel-perfect accuracy.
+
+3. **Implementation Rules**
+
+   * You will recreate the UI using **Next.js + Tailwind + shadcn/ui**.
+   * Follow the **HTML and CSS** provided in the `html/` folder exactly.
+   * Ensure the design matches **1:1 with Bhindi.io** — spacing, typography, colors, animations, responsiveness.
+   * Where necessary, translate provided HTML/CSS into proper React components.
+   * Keep the code **clean, reusable, and consistent** with the Augment Suite style.
+
+4. **Workflow**
+
+   * I will send you one page at a time.
+   * For each page, you will:
+
+     * Check the `html/` folder for the provided code and classes.
+     * Cross-reference with the screenshot.
+     * Implement the page UI exactly in Next.js.
+   * Once a page is complete, we will move to the next.
+
+5. **Output Expectations**
+
+   * Pages must be **responsive** (desktop + mobile).
+   * Use **theme colors and shared components** where possible.
+   * The cloned UI must look **seamless and professional** — indistinguishable from Bhindi.io.
+   * Keep file structure organized by **pages, components, and styles**.
+
+6. **Non-Negotiables**
+
+   * Do not improvise or change the design.
+   * Do not remove or simplify key visual elements.
+   * Always cross-check with the provided HTML/CSS and screenshots before finalizing.
+   * Every page must maintain **exact fidelity to Bhindi.io’s UI**.
+
+7. **Rebranding Instructions**
+
+   * Replace all instances of **Bhindi.io** with **Augment Flow**.
+   * Keep the overall design the same, but ensure the name change is consistent across all pages.
+   * For **images and URLs**, you can use the same ones from Bhindi.io, but add the **domain to `next.config.js`** so they work properly.
+   * For **logos**, replace Bhindi.io’s logo with a **beautiful text-based design** that says **Augment Flow**.
+   * The finished product should look like Bhindi.io, but feel like it belongs to **Augment Suite**.
+
+### Cursor Rules for Augment Flow (Bhindi.io Clone)
+
+1. **Project Goal**
+
+   * We are cloning **Bhindi.io** as part of the Augment Suite.
+   * The clone must look and feel **exactly like Bhindi.io** in design, layout, and interactions.
+
+2. **Source Material**
+
+   * I will provide **HTML and CSS classes** copied directly from the Inspect Tool.
+   * I will also provide **screenshots** of the UI for reference.
+   * These assets will be stored inside the **`html/` folder** in the root directory.
+   * You must refer to this folder whenever implementing designs to ensure pixel-perfect accuracy.
+
+3. **Implementation Rules**
+
+   * You will recreate the UI using **Next.js + Tailwind + shadcn/ui**.
+   * Follow the **HTML and CSS** provided in the `html/` folder exactly.
+   * Ensure the design matches **1:1 with Bhindi.io** — spacing, typography, colors, animations, responsiveness.
+   * Where necessary, translate provided HTML/CSS into proper React components.
+   * Keep the code **clean, reusable, and consistent** with the Augment Suite style.
+
+4. **Workflow**
+
+   * I will send you one page at a time.
+   * For each page, you will:
+
+     * Check the `html/` folder for the provided code and classes.
+     * Cross-reference with the screenshot.
+     * Implement the page UI exactly in Next.js.
+   * Once a page is complete, we will move to the next.
+
+5. **Output Expectations**
+
+   * Pages must be **responsive** (desktop + mobile).
+   * Use **theme colors and shared components** where possible.
+   * The cloned UI must look **seamless and professional** — indistinguishable from Bhindi.io.
+   * Keep file structure organized by **pages, components, and styles**.
+
+6. **Non-Negotiables**
+
+   * Do not improvise or change the design.
+   * Do not remove or simplify key visual elements.
+   * Always cross-check with the provided HTML/CSS and screenshots before finalizing.
+   * Every page must maintain **exact fidelity to Bhindi.io’s UI**.
+
+7. **Rebranding Instructions**
+
+   * Replace all instances of **Bhindi.io** with **Augment Flow**.
+   * Keep the overall design the same, but ensure the name change is consistent across all pages.
+   * For **images and URLs**, you can use the same ones from Bhindi.io, but add the **domain to `next.config.js`** so they work properly.
+   * For **logos**, replace Bhindi.io’s logo with a **beautiful text-based design** that says **Augment Flow**.
+   * The finished product should look like Bhindi.io, but feel like it belongs to **Augment Suite**.
+

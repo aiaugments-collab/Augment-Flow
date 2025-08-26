@@ -1,0 +1,124 @@
+'use client';
+
+import { useState } from 'react';
+import DashboardLayout from '../components/DashboardLayout';
+import ProtectedRoute from '../components/ProtectedRoute';
+import Link from 'next/link';
+
+export default function BackgroundAgentsPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  return (
+    <ProtectedRoute>
+      <DashboardLayout>
+        <main className="flex-1 bg-background sidebar-scrollable-content overflow-y-auto">
+          <div className="w-full h-[100dvh] max-h-[100dvh] overflow-y-auto">
+            <div className="h-[calc(100dvh-64px)] lg:h-[100dvh] bg-background overflow-y-auto">
+              <div className="flex flex-col gap-8 px-4 py-6 md:py-10 lg:py-16 max-w-7xl mx-auto">
+                
+                {/* Header Section */}
+                <div className="w-full flex flex-col md:flex-row items-center md:justify-between gap-4">
+                  <div className="flex flex-col gap-2 items-center md:items-start">
+                    <h1 className="text-xl md:text-2xl lg:text-3xl font-heading font-semibold text-foreground">
+                      Background Agents
+                    </h1>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    {/* Search Input */}
+                    <div className="relative">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        className="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                      >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                      </svg>
+                      <input
+                        className="file:text-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 flex h-10 w-full min-w-0 border px-3 shadow-xs outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive pl-10 pr-4 max-w-100 flex-grow py-3 text-xs text-foreground placeholder:text-muted-foreground bg-card border-border rounded-lg focus:ring-primary/20 transition-all duration-200 truncate"
+                        placeholder="Search agents..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                    
+                    {/* New Agent Button */}
+                    <Link href="/agents/create">
+                      <button className="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:cursor-not-allowed bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[>svg]:px-3">
+                        <span className="inline text-xs font-medium leading-4">New Agent</span>
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Empty State */}
+                <div className="bg-background border border-border rounded-2xl p-0 relative w-full flex flex-col gap-6 items-center justify-center py-16 px-8">
+                  
+                  {/* Empty State Icon */}
+                  <div className="relative shrink-0 w-32 h-32 flex items-center justify-center">
+                    <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-muted-foreground/30">
+                      <rect x="20" y="28" width="88" height="80" rx="8" stroke="currentColor" strokeWidth="2" fill="none"></rect>
+                      <rect x="20" y="28" width="88" height="20" rx="8" fill="currentColor" fillOpacity="0.1"></rect>
+                      <rect x="36" y="16" width="4" height="24" rx="2" fill="currentColor"></rect>
+                      <rect x="52" y="16" width="4" height="24" rx="2" fill="currentColor"></rect>
+                      <rect x="72" y="16" width="4" height="24" rx="2" fill="currentColor"></rect>
+                      <rect x="88" y="16" width="4" height="24" rx="2" fill="currentColor"></rect>
+                      <circle cx="36" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="48" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="60" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="72" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="84" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="96" cy="64" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="36" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="48" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="60" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="72" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="84" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="96" cy="76" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="36" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="48" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="60" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="72" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="84" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="96" cy="88" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="36" cy="100" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="48" cy="100" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="60" cy="100" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                      <circle cx="72" cy="100" r="2" fill="currentColor" fillOpacity="0.3"></circle>
+                    </svg>
+                  </div>
+                  
+                  {/* Empty State Text */}
+                  <div className="flex flex-col gap-4 items-center justify-start max-w-lg text-center">
+                    <h2 className="font-heading font-semibold text-secondary-foreground text-2xl leading-8">
+                      No agents found
+                    </h2>
+                  </div>
+                  
+                  {/* Create Agent Button */}
+                  <Link href="/agents/create">
+                    <button className="cursor-pointer justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:cursor-not-allowed has-[>svg]:px-3 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm rounded-lg h-10 px-4 py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus h-4 w-4">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                      <span className="text-xs font-medium leading-4">Create your first agent</span>
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </DashboardLayout>
+    </ProtectedRoute>
+  );
+}

@@ -1,26 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sidebar Variables */
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
+
+  /* Bhindi Color Palette */
+  --bhindi-green-50: #f2fffa;
+  --bhindi-green-100: #e2fff5;
+  --bhindi-green-200: #beffe9;
+  --bhindi-green-300: #79ffd2;
+  --bhindi-green-400: #0fdd98;
+  --bhindi-green-500: #00c584;
+  --bhindi-green-600: #008b5c;
+  --bhindi-green-700: #006141;
+  --bhindi-green-800: #003b27;
+  --bhindi-green-900: #002f1f;
+  --bhindi-green-950: #001d14;
+  --bhindi-zinc-50: #f1f2f5;
+  --bhindi-zinc-100: #dcdee2;
+  --bhindi-zinc-200: #bfc4cc;
+  --bhindi-zinc-300: #737983;
+  --bhindi-zinc-400: #424750;
+  --bhindi-zinc-500: #2d3037;
+  --bhindi-zinc-600: #24272c;
+  --bhindi-zinc-700: #1c1e22;
+  --bhindi-zinc-800: #17191c;
+  --bhindi-zinc-900: #121417;
+  --bhindi-zinc-950: #0d0f11;
+  --bhindi-red-50: #fff5f7;
+  --bhindi-red-100: #ffdde2;
+  --bhindi-red-200: #ffaebb;
+  --bhindi-red-300: #ff879b;
+  --bhindi-red-400: #ff6982;
+  --bhindi-red-500: #fb4462;
+  --bhindi-red-600: #d7324d;
+  --bhindi-red-700: #ae283e;
+  --bhindi-red-800: #661825;
+  --bhindi-red-900: #380e14;
+  --bhindi-red-950: #300a10;
+  --bhindi-base-white: #fff;
+  --bhindi-input-dark-rgba: #ffffff1a;
+  --bhindi-destructive-foreground-rgba: #fb446233;
+  --bhindi-orange-600: #ea580c;
+  --bhindi-teal-600: #0d9488;
+  --bhindi-cyan-900: #164e63;
+  --bhindi-amber-400: #fbbf24;
+  --bhindi-amber-500: #f59e0b;
+  --bhindi-blue-700: #1d4ed8;
+  --bhindi-emerald-500: #10b981;
+  --bhindi-purple-500: #a855f7;
+  --bhindi-rose-500: #f43f5e;
+
+  /* Default Theme Variables (Dark by default) */
+  --background: var(--bhindi-zinc-800);
+  --foreground: var(--bhindi-zinc-50);
+  --card: var(--bhindi-zinc-900);
+  --card-foreground: var(--bhindi-zinc-50);
+  --popover: var(--bhindi-zinc-700);
+  --popover-foreground: var(--bhindi-zinc-50);
+  --primary: var(--bhindi-green-500);
+  --primary-foreground: var(--bhindi-zinc-900);
+  --secondary: var(--bhindi-zinc-700);
+  --secondary-foreground: var(--bhindi-zinc-50);
+  --muted: var(--bhindi-zinc-600);
+  --muted-foreground: var(--bhindi-zinc-400);
+  --accent: var(--bhindi-zinc-500);
+  --accent-foreground: var(--bhindi-zinc-50);
+  --destructive: var(--bhindi-red-500);
+  --destructive-foreground: var(--bhindi-destructive-foreground-rgba);
+  --border: var(--bhindi-zinc-600);
+  --input: var(--bhindi-input-dark-rgba);
+  --ring: var(--bhindi-zinc-300);
+  --radius: 0.5rem;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar-background: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--bhindi-base-white);
+    --foreground: var(--bhindi-zinc-950);
+    --card: var(--bhindi-base-white);
+    --card-foreground: var(--bhindi-zinc-950);
+    --popover: var(--bhindi-zinc-50);
+    --popover-foreground: var(--bhindi-zinc-950);
+    --primary: var(--bhindi-green-500);
+    --primary-foreground: var(--bhindi-zinc-900);
+    --secondary: var(--bhindi-zinc-100);
+    --secondary-foreground: var(--bhindi-zinc-950);
+    --muted: var(--bhindi-zinc-100);
+    --muted-foreground: var(--bhindi-zinc-500);
+    --accent: var(--bhindi-zinc-100);
+    --accent-foreground: var(--bhindi-zinc-950);
+    --destructive: var(--bhindi-red-500);
+    --destructive-foreground: var(--bhindi-destructive-foreground-rgba);
+    --border: var(--bhindi-zinc-200);
+    --input: var(--bhindi-zinc-50);
+    --ring: var(--bhindi-zinc-300);
+    --sidebar-background: var(--bhindi-base-white);
+    --sidebar-foreground: var(--bhindi-zinc-950);
   }
+}
+
+/* Dark mode class-based theme */
+.dark {
+  --background: var(--bhindi-zinc-800);
+  --foreground: var(--bhindi-zinc-50);
+  --card: var(--bhindi-zinc-900);
+  --card-foreground: var(--bhindi-zinc-50);
+  --popover: var(--bhindi-zinc-700);
+  --popover-foreground: var(--bhindi-zinc-50);
+  --primary: var(--bhindi-green-500);
+  --primary-foreground: var(--bhindi-zinc-900);
+  --secondary: var(--bhindi-zinc-700);
+  --secondary-foreground: var(--bhindi-zinc-50);
+  --muted: var(--bhindi-zinc-600);
+  --muted-foreground: var(--bhindi-zinc-300);
+  --accent: var(--bhindi-zinc-500);
+  --accent-foreground: var(--bhindi-zinc-50);
+  --destructive: var(--bhindi-red-500);
+  --destructive-foreground: var(--bhindi-destructive-foreground-rgba);
+  --border: var(--bhindi-zinc-600);
+  --input: var(--bhindi-input-dark-rgba);
+  --ring: var(--bhindi-zinc-300);
+  --sidebar-background: var(--bhindi-zinc-900);
+  --sidebar-foreground: var(--bhindi-zinc-50);
+}
+
+/* Light mode class-based theme */
+.light {
+  --background: var(--bhindi-base-white);
+  --foreground: var(--bhindi-zinc-950);
+  --card: var(--bhindi-base-white);
+  --card-foreground: var(--bhindi-zinc-950);
+  --popover: var(--bhindi-zinc-50);
+  --popover-foreground: var(--bhindi-zinc-950);
+  --primary: var(--bhindi-green-500);
+  --primary-foreground: var(--bhindi-zinc-900);
+  --secondary: var(--bhindi-zinc-100);
+  --secondary-foreground: var(--bhindi-zinc-950);
+  --muted: var(--bhindi-zinc-100);
+  --muted-foreground: var(--bhindi-zinc-500);
+  --accent: var(--bhindi-zinc-100);
+  --accent-foreground: var(--bhindi-zinc-950);
+  --destructive: var(--bhindi-red-500);
+  --destructive-foreground: var(--bhindi-destructive-foreground-rgba);
+  --border: var(--bhindi-zinc-200);
+  --input: var(--bhindi-zinc-50);
+  --ring: var(--bhindi-zinc-300);
+  --sidebar-background: var(--bhindi-base-white);
+  --sidebar-foreground: var(--bhindi-zinc-950);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Additional utility classes */
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Scrollbar styling to match Bhindi */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Apps section animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
