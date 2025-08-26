@@ -36,7 +36,7 @@ gmailProvider.addScope('https://www.googleapis.com/auth/gmail.send');
 gmailProvider.addScope('https://www.googleapis.com/auth/gmail.compose');
 gmailProvider.addScope('https://www.googleapis.com/auth/gmail.modify');
 gmailProvider.setCustomParameters({
-  prompt: 'select_account',
+  prompt: 'consent', // Force consent screen to get refresh token
   access_type: 'offline', // Request refresh token
   include_granted_scopes: 'true'
 });

@@ -34,7 +34,7 @@ export async function connectGmail(user: User): Promise<UserConnection> {
     // Configure for offline access to get refresh token
     gmailProvider.setCustomParameters({
       prompt: 'consent', // Force consent screen to ensure refresh token
-      access_type: 'offline',
+      access_type: 'offline', // Critical for refresh token
       include_granted_scopes: 'true'
     });
 
@@ -77,7 +77,7 @@ export async function connectGmail(user: User): Promise<UserConnection> {
       displayName: result.user.displayName || 'Gmail Account',
       email: result.user.email || '',
       accessToken: accessToken,
-      refreshToken: credential.idToken || '', // Store ID token as fallback
+      refreshToken: credential.idToken || accessToken, // Use access token as fallback for now
       expiresAt: Date.now() + (3600 * 1000), // 1 hour default
       createdAt: Date.now(),
       updatedAt: Date.now()

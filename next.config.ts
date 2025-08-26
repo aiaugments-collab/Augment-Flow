@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'bhindi.io',
         port: '',
-        pathname: '/landing-page/**',
+        pathname: '/**',
       },
       {
         protocol: 'https',

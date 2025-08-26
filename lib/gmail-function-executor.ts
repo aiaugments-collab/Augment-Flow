@@ -5,6 +5,7 @@ import { gmailService } from './gmail-service';
 import { FunctionCall, FunctionCallResult } from './gmail-functions';
 import { logger } from './logger';
 import { geminiService } from './gemini-service';
+import { tokenRefreshService } from './token-refresh';
 
 export class GmailFunctionExecutor {
   
@@ -18,33 +19,43 @@ export class GmailFunctionExecutor {
         arguments: functionCall.arguments
       });
 
+      // Ensure token is valid before making API calls
+      const validConnection = await tokenRefreshService.ensureValidToken(connection);
+      
+      if (validConnection !== connection) {
+        logger.info('🔄 Using refreshed token for API call', {
+          function: functionCall.name,
+          connectionId: validConnection.id
+        });
+      }
+
       switch (functionCall.name) {
         case 'sendEmail':
-          return await this.sendEmail(connection, functionCall.arguments);
+          return await this.sendEmail(validConnection, functionCall.arguments);
           
         case 'searchEmails':
-          return await this.searchEmails(connection, functionCall.arguments);
+          return await this.searchEmails(validConnection, functionCall.arguments);
           
         case 'getEmails':
-          return await this.getEmails(connection, functionCall.arguments);
+          return await this.getEmails(validConnection, functionCall.arguments);
           
         case 'draftEmail':
-          return await this.draftEmail(connection, functionCall.arguments);
+          return await this.draftEmail(validConnection, functionCall.arguments);
           
         case 'getEmailDetails':
-          return await this.getEmailDetails(connection, functionCall.arguments);
+          return await this.getEmailDetails(validConnection, functionCall.arguments);
           
         case 'markAsRead':
-          return await this.markAsRead(connection, functionCall.arguments);
+          return await this.markAsRead(validConnection, functionCall.arguments);
           
         case 'markAsUnread':
-          return await this.markAsUnread(connection, functionCall.arguments);
+          return await this.markAsUnread(validConnection, functionCall.arguments);
           
         case 'deleteEmails':
-          return await this.deleteEmails(connection, functionCall.arguments);
+          return await this.deleteEmails(validConnection, functionCall.arguments);
           
         case 'summarizeEmails':
-          return await this.summarizeEmails(connection, functionCall.arguments);
+          return await this.summarizeEmails(validConnection, functionCall.arguments);
           
         default:
           return {

@@ -78,6 +78,15 @@ class GmailAgent {
           allResults.push(result);
 
           if (!result.success) {
+            // Check if it's a reconnection error
+            if (result.error?.includes('RECONNECT_REQUIRED')) {
+              return {
+                success: false,
+                message: `🔄 Your Gmail connection has expired. Please go to Apps and reconnect your Gmail account for continued access.`,
+                action: 'reconnect_required'
+              };
+            }
+            
             return {
               success: false,
               message: `❌ Error executing ${functionCall.name}: ${result.error}`,
