@@ -6,27 +6,59 @@ import EnergyDisplay from '../components/EnergyDisplay';
 import ChatInput from '../components/ChatInput';
 import ContactTeamButton from '../components/ContactTeamButton';
 import ProtectedRoute from '../components/ProtectedRoute';
+import { useAuth } from '../../lib/auth-context';
+import { agentManager, ChatMessage } from '../../lib/agent-manager';
 
 export default function DashboardPage() {
-  const [messages, setMessages] = useState<Array<{ id: string; text: string; sender: 'user' | 'ai' }>>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const { user } = useAuth();
 
-  const handleSendMessage = (message: string) => {
-    const newMessage = {
+  const handleSendMessage = async (message: string) => {
+    if (!user) return;
+
+    // Add user message
+    const userMessage: ChatMessage = {
       id: Date.now().toString(),
       text: message,
-      sender: 'user' as const
+      sender: 'user',
+      timestamp: Date.now()
     };
-    setMessages(prev => [...prev, newMessage]);
-    
-    // TODO: Implement AI response
-    setTimeout(() => {
-      const aiResponse = {
-        id: (Date.now() + 1).toString(),
-        text: `I received your message: "${message}". This is a placeholder response.`,
-        sender: 'ai' as const
+    setMessages(prev => [...prev, userMessage]);
+
+    // Add loading message
+    const loadingMessage: ChatMessage = {
+      id: (Date.now() + 1).toString(),
+      text: '🤔 Processing your request...',
+      sender: 'ai',
+      timestamp: Date.now(),
+      loading: true
+    };
+    setMessages(prev => [...prev, loadingMessage]);
+
+    try {
+      // Process with agent manager
+      const response = await agentManager.processUserMessage(user.uid, message);
+      const aiMessage = agentManager.createChatMessage(response);
+
+      // Replace loading message with actual response
+      setMessages(prev => 
+        prev.map(msg => msg.id === loadingMessage.id ? aiMessage : msg)
+      );
+    } catch (error) {
+      console.error('Error processing message:', error);
+      
+      // Replace loading message with error
+      const errorMessage: ChatMessage = {
+        id: loadingMessage.id,
+        text: "I'm sorry, I encountered an error while processing your request. Please try again.",
+        sender: 'ai',
+        timestamp: Date.now()
       };
-      setMessages(prev => [...prev, aiResponse]);
-    }, 1000);
+      
+      setMessages(prev => 
+        prev.map(msg => msg.id === loadingMessage.id ? errorMessage : msg)
+      );
+    }
   };
 
   return (
@@ -60,9 +92,16 @@ export default function DashboardPage() {
                             message.sender === 'user'
                               ? 'bg-primary text-primary-foreground'
                               : 'bg-secondary text-secondary-foreground'
-                          }`}
+                          } ${message.loading ? 'animate-pulse' : ''}`}
                         >
-                          {message.text}
+                          <div className="whitespace-pre-wrap">{message.text}</div>
+                          {message.agentType && (
+                            <div className="text-xs opacity-70 mt-1">
+                              {message.agentType === 'gmail' && '📧 Gmail Agent'}
+                              {message.agentType === 'calculator' && '🧮 Calculator Agent'}
+                              {message.agentType === 'sheets' && '📋 Sheets Agent'}
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}

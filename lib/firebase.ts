@@ -29,6 +29,18 @@ googleProvider.setCustomParameters({
   prompt: 'select_account'
 });
 
+// Initialize Google Auth Provider for Gmail
+export const gmailProvider = new GoogleAuthProvider();
+gmailProvider.addScope('https://www.googleapis.com/auth/gmail.readonly');
+gmailProvider.addScope('https://www.googleapis.com/auth/gmail.send');
+gmailProvider.addScope('https://www.googleapis.com/auth/gmail.compose');
+gmailProvider.addScope('https://www.googleapis.com/auth/gmail.modify');
+gmailProvider.setCustomParameters({
+  prompt: 'select_account',
+  access_type: 'offline', // Request refresh token
+  include_granted_scopes: 'true'
+});
+
 // Initialize Analytics (only in browser)
 export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
 

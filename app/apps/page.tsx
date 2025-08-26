@@ -7,98 +7,136 @@ import ContactTeamButton from '../components/ContactTeamButton';
 import AppCard from './components/AppCard';
 import { Search } from 'lucide-react';
 
-// Mock data for apps - in a real app this would come from an API
-const apps = [
+// Apps that Augment Flow can connect to and use
+const apps: Array<{
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  badge: string;
+  type: 'core' | 'integration';
+}> = [
+  // Core Apps (Working)
+  {
+    id: 'gmail',
+    name: 'Gmail',
+    description: 'Connect your Gmail to send emails, create drafts, and summarize your inbox.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
+    badge: 'Available',
+    type: 'core'
+  },
+  {
+    id: 'sheets',
+    name: 'Google Sheets',
+    description: 'Connect Google Sheets to add rows, update cells, and manage spreadsheets.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg',
+    badge: 'Coming Soon',
+    type: 'core'
+  },
+  // Third-party integrations
   {
     id: 'agentql',
     name: 'AgentQL',
     description: 'Web scraping and automation using natural language queries.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/agentql.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'apollo',
     name: 'Apollo',
     description: 'A comprehensive data enrichment and search tool that integrates with Apollo.io\'s API to find and enrich professional profiles and company information. It provides single and bulk enrichment capabilities for people and organizations, along with powerful search functionality and job posting insights to identify growth opportunities.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/apollo.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-apigateway',
     name: 'AWS API Gateway',
     description: 'Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-apigateway.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-cloudwatch',
     name: 'AWS Cloudwatch',
     description: 'AWS CloudWatch - Monitoring and observability service that collects metrics, logs, and alarms to track application performance and infrastructure health.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-cloudwatch.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-cost-management',
     name: 'AWS Cost Management',
     description: 'AWS Billing and Cost Management agent provides a suite of features to help you set up your billing, retrieve and pay invoices, and analyze, organize, plan, and optimize your costs',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-cost-management.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-dynamodb',
     name: 'AWS DynamoDB',
     description: 'AWS DynamoDB - Fully managed NoSQL database service that provides fast, predictable performance for applications requiring single-digit millisecond latency at any scale.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-dynamodb.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-ec2',
     name: 'AWS EC2',
     description: 'Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the AWS Cloud.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-ec2.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-iam',
     name: 'AWS IAM',
     description: 'AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-iam.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-lambda',
     name: 'AWS Lambda',
     description: 'AWS Lambda - Serverless compute service that runs code in response to events without managing servers.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-lambda.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-route53',
     name: 'AWS Route 53',
     description: 'Amazon Route 53 is a highly available and scalable cloud domain name system (DNS) service. Enables to customize DNS routing policies to reduce latency.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-route53.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-s3',
     name: 'AWS S3',
     description: 'AWS S3 Object storage service agent for storing and retrieving files',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-s3.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-sns',
     name: 'AWS SNS',
     description: 'AWS SNS - Push notification service that sends messages to multiple subscribers through various channels including email, SMS, mobile push, and HTTP endpoints.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-sns.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   },
   {
     id: 'aws-sqs',
     name: 'AWS SQS',
     description: 'Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service.',
     image: 'https://agents-storage.nyc3.digitaloceanspaces.com/agents/aws-sqs.png',
-    badge: 'Variables'
+    badge: 'Variables',
+    type: 'integration'
   }
 ];
 
